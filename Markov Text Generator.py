@@ -136,13 +136,12 @@ corpus = word_extract(markov_text)
 corpus = tuple(corpus)
 
 # the markov order variable will tell the text generator how many words to look back on when it comes to generating text
-
+# this is also known as order of a Markov model, or how many consecutive elements a markov model will use when generating text
 markov_order = 8
 markov_corpus = []
 markov_dict = {}
-markov_focus = []
 
-# this loop will break the list of words in the 'corpus' variable into overlapping tuples
+# this loop will break the list of words in the 'corpus' variable into overlapping tuples, or n-grams
 
 for i, c in enumerate(corpus):
     if markov_order >= len(corpus):
